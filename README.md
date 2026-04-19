@@ -38,7 +38,7 @@ CraftNexus Hub does not sell or redistribute mods. It respects mod authors by li
 
 ## 📸 Screenshots
 
-*(Add screenshots here later)*
+Coming Soon like later this day
 
 ---
 
