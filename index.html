@@ -11,16 +11,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
   background: #0f172a;
   color: white;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding-top: 70px;
 }
 
-/* Animated background */
+/* Background glow */
 .background {
   position: fixed;
   width: 100%;
@@ -28,13 +30,59 @@ body {
   background: radial-gradient(circle at 20% 20%, #38bdf8 0%, transparent 40%),
               radial-gradient(circle at 80% 80%, #6366f1 0%, transparent 40%);
   opacity: 0.15;
-  animation: moveBG 10s infinite alternate;
+  animation: moveBG 12s infinite alternate;
   z-index: -1;
 }
 
 @keyframes moveBG {
   from { transform: scale(1); }
   to { transform: scale(1.2); }
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.links a {
+  color: #cbd5e1;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: 0.2s;
+  position: relative;
+}
+
+.links a:hover {
+  color: #38bdf8;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.3s;
+}
+
+.links a:hover::after {
+  width: 100%;
 }
 
 /* Layout */
@@ -53,7 +101,6 @@ body {
 
 .fade.delay1 { animation-delay: 0.2s; }
 .fade.delay2 { animation-delay: 0.4s; }
-.fade.delay3 { animation-delay: 0.6s; }
 
 @keyframes fadeIn {
   to {
@@ -62,7 +109,7 @@ body {
   }
 }
 
-/* Hero */
+/* HERO */
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -99,7 +146,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Feature cards */
+/* FEATURES */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -111,8 +158,8 @@ body {
   background: rgba(30, 41, 59, 0.8);
   padding: 20px;
   border-radius: 14px;
-  transition: 0.3s;
   border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -120,7 +167,7 @@ body {
   border-color: #38bdf8;
 }
 
-/* Pricing */
+/* PRICING */
 .pricing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -142,7 +189,7 @@ body {
 
 .pro {
   border: 2px solid #38bdf8;
-  box-shadow: 0 0 30px rgba(56,189,248,0.2);
+  box-shadow: 0 0 25px rgba(56,189,248,0.2);
 }
 
 .price {
@@ -151,7 +198,7 @@ body {
   color: #38bdf8;
 }
 
-/* Table */
+/* TABLE */
 table {
   width: 100%;
   margin-top: 40px;
@@ -168,7 +215,7 @@ th {
   color: #38bdf8;
 }
 
-/* Footer */
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 40px;
@@ -183,17 +230,26 @@ th {
 
 <div class="background"></div>
 
+<div class="navbar">
+  <div class="logo">CraftNexus</div>
+  <div class="links">
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+</div>
+
 <!-- HERO -->
 
-<div class="hero fade">
+<div class="hero fade" id="home">
   <h1>CraftNexus Hub</h1>
-  <p>The modern all-in-one Minecraft server manager — mods, configs, backups, and performance in one powerful tool.</p>
+  <p>A modern all-in-one Minecraft server manager — mods, configs, backups, and performance tools in one powerful desktop app.</p>
   <a class="btn" href="#">Download</a>
 </div>
 
 <!-- FEATURES -->
 
-<div class="container fade delay1">
+<div class="container fade delay1" id="features">
   <h2 style="text-align:center;">Features</h2>
 
   <div class="grid">
@@ -201,38 +257,32 @@ th {
     <div class="card">📦 Mod Management</div>
     <div class="card">⚙️ Config Editor</div>
     <div class="card">💾 Smart Backups</div>
-    <div class="card">📊 Live Performance</div>
-    <div class="card">👥 Player Tools</div>
+    <div class="card">📊 Performance Monitor</div>
+    <div class="card">👥 Player Manager</div>
   </div>
 </div>
 
 <!-- PRICING -->
 
-<div class="container fade delay2">
+<div class="container fade delay2" id="pricing">
   <h2 style="text-align:center;">Pricing</h2>
 
   <div class="pricing">
     <div class="price-card">
       <h3>Free</h3>
       <div class="price">$0</div>
-      <p>Basic server management tools</p>
+      <p>Basic server tools and management</p>
     </div>
 
-```
+
 <div class="price-card pro">
   <h3>Pro</h3>
   <div class="price">$20</div>
-  <p>Unlock full automation & advanced tools</p>
+  <p>Full automation, backups, and advanced tools</p>
 </div>
-```
+
 
   </div>
-</div>
-
-<!-- COMPARISON -->
-
-<div class="container fade delay3">
-  <h2 style="text-align:center;">Free vs Pro</h2>
 
   <table>
     <tr>
@@ -263,10 +313,11 @@ th {
   </table>
 </div>
 
+
+
 <div class="footer">
-  © 2026 CraftNexus Hub
+  © 2026 CraftNexus Hub — All rights reserved
 </div>
 
 </body>
 </html>
-
