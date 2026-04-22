@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CraftNexus Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CraftNexus Hub</title>
 
   <style>
     body {
@@ -12,50 +12,103 @@
       font-family: Arial, sans-serif;
       background: #0f172a;
       color: white;
-      text-align: center;
     }
 
     .container {
-      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    h1, h2 {
+      text-align: center;
     }
 
     p {
       color: #94a3b8;
+      text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
       font-size: 1.2rem;
       max-width: 600px;
-      margin: 0 auto;
+      margin: auto;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 25px;
       padding: 14px 28px;
       background: #38bdf8;
       color: black;
       border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.2s;
     }
 
-    .btn:hover {
-      background: #0ea5e9;
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Screenshots */
+    .screenshots {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .screenshots img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 80px;
+      padding: 20px;
+      color: #64748b;
     }
   </style>
 
 </head>
 
 <body>
-  <div class="container">
+
+  <!-- HERO -->
+
+  <div class="hero">
     <h1>CraftNexus Hub</h1>
     <p>
-      A modern all-in-one desktop app for managing Minecraft servers,
-      mods, configs, and backups — without the hassle.
+      The easiest way to create and manage Minecraft servers —
+      mods, configs, backups, and performance all in one place.
     </p>
 
 ```
@@ -63,5 +116,62 @@
 ```
 
   </div>
+
+  <!-- FEATURES -->
+
+  <div class="container">
+    <h2>Features</h2>
+
+```
+<div class="features">
+  <div class="card">
+    <h3>⚡ Server Control</h3>
+    <p>Start, stop, and monitor your servers with ease.</p>
+  </div>
+
+  <div class="card">
+    <h3>📦 Mod Management</h3>
+    <p>Enable, disable, and manage mods effortlessly.</p>
+  </div>
+
+  <div class="card">
+    <h3>⚙️ Config Editor</h3>
+    <p>Edit configs with both raw and visual tools.</p>
+  </div>
+
+  <div class="card">
+    <h3>💾 Backups</h3>
+    <p>Create and restore backups with preview support.</p>
+  </div>
+
+  <div class="card">
+    <h3>📊 Performance</h3>
+    <p>Monitor CPU and RAM usage in real time.</p>
+  </div>
+
+  <div class="card">
+    <h3>👥 Player Manager</h3>
+    <p>Control whitelist, bans, and permissions easily.</p>
+  </div>
+</div>
+
+<!-- SCREENSHOTS -->
+<div class="screenshots">
+  <h2>Screenshots</h2>
+  <p>Add your app screenshots here</p>
+
+  <!-- Replace with your images -->
+  <img src="screenshot.png" alt="App Screenshot">
+</div>
+```
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+    © 2026 CraftNexus Hub — All rights reserved
+  </div>
+
 </body>
 </html>
