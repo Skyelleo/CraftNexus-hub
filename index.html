@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CraftNexus Hub</title>
 
+<link rel="icon" href="logo.png">
+
 <style>
 * {
   margin: 0;
@@ -22,7 +24,7 @@ body {
   padding-top: 70px;
 }
 
-/* Background glow */
+/* Background */
 .background {
   position: fixed;
   width: 100%;
@@ -39,7 +41,7 @@ body {
   to { transform: scale(1.2); }
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -47,42 +49,32 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
   z-index: 1000;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: bold;
   color: #38bdf8;
+}
+
+.logo img {
+  height: 34px;
 }
 
 .links a {
   color: #cbd5e1;
   margin-left: 20px;
   text-decoration: none;
-  transition: 0.2s;
-  position: relative;
 }
 
 .links a:hover {
   color: #38bdf8;
-}
-
-.links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: #38bdf8;
-  transition: 0.3s;
-}
-
-.links a:hover::after {
-  width: 100%;
 }
 
 /* Layout */
@@ -109,7 +101,7 @@ body {
   }
 }
 
-/* HERO */
+/* Hero */
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -130,11 +122,11 @@ body {
   margin-right: auto;
 }
 
+/* Buttons */
 .btn {
   margin-top: 25px;
   display: inline-block;
   padding: 14px 30px;
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
   border-radius: 12px;
   color: white;
   text-decoration: none;
@@ -142,11 +134,19 @@ body {
   transition: 0.3s;
 }
 
+.btn.primary {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+}
+
+.btn.secondary {
+  background: #1e293b;
+}
+
 .btn:hover {
   transform: scale(1.05);
 }
 
-/* FEATURES */
+/* Features */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -167,7 +167,7 @@ body {
   border-color: #38bdf8;
 }
 
-/* PRICING */
+/* Pricing */
 .pricing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -180,11 +180,6 @@ body {
   padding: 30px;
   border-radius: 16px;
   text-align: center;
-  transition: 0.3s;
-}
-
-.price-card:hover {
-  transform: translateY(-5px);
 }
 
 .pro {
@@ -198,7 +193,7 @@ body {
   color: #38bdf8;
 }
 
-/* TABLE */
+/* Table */
 table {
   width: 100%;
   margin-top: 40px;
@@ -215,7 +210,7 @@ th {
   color: #38bdf8;
 }
 
-/* FOOTER */
+/* Footer */
 .footer {
   text-align: center;
   padding: 40px;
@@ -230,8 +225,14 @@ th {
 
 <div class="background"></div>
 
+<!-- NAVBAR -->
+
 <div class="navbar">
-  <div class="logo">CraftNexus</div>
+  <div class="logo">
+    <img src="logo.png" alt="CraftNexus Logo">
+    <span>CraftNexus</span>
+  </div>
+
   <div class="links">
     <a href="#home">Home</a>
     <a href="#features">Features</a>
@@ -243,8 +244,14 @@ th {
 
 <div class="hero fade" id="home">
   <h1>CraftNexus Hub</h1>
-  <p>A modern all-in-one Minecraft server manager — mods, configs, backups, and performance tools in one powerful desktop app.</p>
-  <a class="btn" href="#">Download</a>
+  <p>Modern all-in-one Minecraft server manager — mods, configs, backups, and performance tools in one powerful desktop app.</p>
+
+  <p style="margin-top:10px; font-size:0.9rem; color:#64748b;">
+    Windows • Modpacks • Forge Supported
+  </p>
+
+<a class="btn primary" href="#pricing">View Pricing</a> <a class="btn secondary" href="https://your-download-link.com">Download Free</a>
+
 </div>
 
 <!-- FEATURES -->
@@ -262,6 +269,15 @@ th {
   </div>
 </div>
 
+<!-- WHY -->
+
+<div class="container fade">
+  <h2 style="text-align:center;">Why CraftNexus?</h2>
+  <p style="max-width:700px; margin:auto; text-align:center;">
+    Managing modded Minecraft servers is complex and time-consuming. CraftNexus Hub simplifies everything into one clean interface — so you can focus on playing instead of fixing.
+  </p>
+</div>
+
 <!-- PRICING -->
 
 <div class="container fade delay2" id="pricing">
@@ -271,16 +287,24 @@ th {
     <div class="price-card">
       <h3>Free</h3>
       <div class="price">$0</div>
-      <p>Basic server tools and management</p>
-    </div>
+      <p>Basic server management tools</p>
 
+```
+  <a class="btn secondary" href="https://your-download-link.com">
+    Download Free
+  </a>
+</div>
 
 <div class="price-card pro">
   <h3>Pro</h3>
   <div class="price">$20</div>
-  <p>Full automation, backups, and advanced tools</p>
-</div>
+  <p>Unlock full automation and advanced tools</p>
 
+  <a class="btn primary" href="https://your-store.lemonsqueezy.com/buy/your-product" target="_blank">
+    Buy Pro
+  </a>
+</div>
+```
 
   </div>
 
@@ -313,7 +337,16 @@ th {
   </table>
 </div>
 
+<!-- CTA -->
 
+<div style="text-align:center; margin-top:60px;">
+  <h2>Upgrade your server management today</h2>
+  <a class="btn primary" href="https://your-store.lemonsqueezy.com/buy/your-product" target="_blank">
+    Get CraftNexus Pro
+  </a>
+</div>
+
+<!-- FOOTER -->
 
 <div class="footer">
   © 2026 CraftNexus Hub — All rights reserved
@@ -321,3 +354,4 @@ th {
 
 </body>
 </html>
+
