@@ -12,6 +12,7 @@
       font-family: Arial, sans-serif;
       background: #0f172a;
       color: white;
+      scroll-behavior: smooth;
     }
 
     .container {
@@ -29,15 +30,28 @@
       text-align: center;
     }
 
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     /* Hero */
     .hero {
       text-align: center;
-      padding: 80px 20px;
+      padding: 100px 20px;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size: 3.2rem;
     }
 
     .hero p {
@@ -50,11 +64,16 @@
       display: inline-block;
       margin-top: 25px;
       padding: 14px 28px;
-      background: #38bdf8;
-      color: black;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: white;
       border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
     }
 
     /* Features */
@@ -68,25 +87,57 @@
     .card {
       background: #1e293b;
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 14px;
       text-align: center;
+      transition: 0.3s;
     }
 
-    .card h3 {
-      margin-bottom: 10px;
+    .card:hover {
+      transform: translateY(-5px);
+      background: #334155;
     }
 
-    /* Screenshots */
-    .screenshots {
-      margin-top: 60px;
+    /* Pricing */
+    .pricing {
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .price-card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 16px;
       text-align: center;
+      border: 1px solid #334155;
     }
 
-    .screenshots img {
+    .price-card.pro {
+      border: 2px solid #38bdf8;
+      transform: scale(1.05);
+    }
+
+    .price {
+      font-size: 2.5rem;
+      margin: 10px 0;
+    }
+
+    /* Comparison */
+    table {
       width: 100%;
-      max-width: 800px;
-      border-radius: 12px;
-      margin-top: 20px;
+      margin-top: 50px;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      padding: 12px;
+      border-bottom: 1px solid #334155;
+      text-align: center;
+    }
+
+    th {
+      color: #38bdf8;
     }
 
     /* Footer */
@@ -104,65 +155,94 @@
 
   <!-- HERO -->
 
-  <div class="hero">
+  <div class="hero fade-in">
     <h1>CraftNexus Hub</h1>
     <p>
       The easiest way to create and manage Minecraft servers —
-      mods, configs, backups, and performance all in one place.
+      mods, configs, backups, and performance in one place.
     </p>
-
-```
-<a class="btn" href="#">Download (Coming Soon)</a>
-```
-
+    <a class="btn" href="#">Download</a>
   </div>
 
   <!-- FEATURES -->
 
-  <div class="container">
+  <div class="container fade-in">
     <h2>Features</h2>
 
 ```
 <div class="features">
-  <div class="card">
-    <h3>⚡ Server Control</h3>
-    <p>Start, stop, and monitor your servers with ease.</p>
+  <div class="card">⚡ Server Control</div>
+  <div class="card">📦 Mod Management</div>
+  <div class="card">⚙️ Config Editor</div>
+  <div class="card">💾 Backups</div>
+  <div class="card">📊 Performance Monitor</div>
+  <div class="card">👥 Player Manager</div>
+</div>
+```
+
   </div>
 
-  <div class="card">
-    <h3>📦 Mod Management</h3>
-    <p>Enable, disable, and manage mods effortlessly.</p>
+  <!-- PRICING -->
+
+  <div class="container fade-in">
+    <h2>Pricing</h2>
+
+```
+<div class="pricing">
+  <div class="price-card">
+    <h3>Free</h3>
+    <p class="price">$0</p>
+    <p>Basic server management features</p>
   </div>
 
-  <div class="card">
-    <h3>⚙️ Config Editor</h3>
-    <p>Edit configs with both raw and visual tools.</p>
-  </div>
-
-  <div class="card">
-    <h3>💾 Backups</h3>
-    <p>Create and restore backups with preview support.</p>
-  </div>
-
-  <div class="card">
-    <h3>📊 Performance</h3>
-    <p>Monitor CPU and RAM usage in real time.</p>
-  </div>
-
-  <div class="card">
-    <h3>👥 Player Manager</h3>
-    <p>Control whitelist, bans, and permissions easily.</p>
+  <div class="price-card pro">
+    <h3>Pro</h3>
+    <p class="price">$20</p>
+    <p>Unlock full power of CraftNexus Hub</p>
   </div>
 </div>
+```
 
-<!-- SCREENSHOTS -->
-<div class="screenshots">
-  <h2>Screenshots</h2>
-  <p>Add your app screenshots here</p>
+  </div>
 
-  <!-- Replace with your images -->
-  <img src="screenshot.png" alt="App Screenshot">
-</div>
+  <!-- COMPARISON -->
+
+  <div class="container fade-in">
+    <h2>Free vs Pro</h2>
+
+```
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>Free</th>
+    <th>Pro</th>
+  </tr>
+  <tr>
+    <td>Server Control</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>Mod Management</td>
+    <td>✔</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>Auto Backups</td>
+    <td>✖</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>Modpack Installer</td>
+    <td>✖</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td>Future Premium Features</td>
+    <td>✖</td>
+    <td>✔</td>
+  </tr>
+</table>
 ```
 
   </div>
@@ -170,7 +250,7 @@
   <!-- FOOTER -->
 
   <div class="footer">
-    © 2026 CraftNexus Hub — All rights reserved
+    © 2026 CraftNexus Hub
   </div>
 
 </body>
